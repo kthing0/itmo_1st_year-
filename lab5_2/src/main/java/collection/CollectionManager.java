@@ -115,9 +115,9 @@ public class CollectionManager {
                 Printer.printSuccess(l + " элементов было успешно удалено из коллекции");
             }if(l == 0){
                 Printer.print("Не найдено элементов меньше заданного");
-            }else{
-                Printer.print("Введенного элемента нет в коллекции");
             }
+        }else{
+            Printer.print("Введенного элемента нет в коллекции");
         }
     }
 
