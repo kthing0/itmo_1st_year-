@@ -1,0 +1,42 @@
+{
+  "test":
+  {
+    "id": "" ,
+    "name": "Mustang",
+    "coordinates": {
+      "x": 12,
+      "y": 42
+    },
+    "creationDate": "",
+    "enginePower": "120",
+    "type": "CHOPPER",
+    "fuelType": "DIESEL"
+  },
+   "hahaha": {
+    "id": "",
+    "name": "Hl1",
+    "coordinates": {
+      "x": 12,
+      "y": 23
+    },
+    "creationDate": "",
+    "enginePower": 120,
+    "type": "SUBMARINE",
+    "fuelType": "PLASMA"
+  },
+  "helicopter": {
+    "id": "",
+    "name": "test_test",
+    "coordinates": {
+      "x": 112,
+      "y": 100
+    },
+    "creationDate": "",
+    "enginePower": 120,
+    "type": "DRONE",
+    "fuelType": "PLASMA"
+  }
+}
+
+
+

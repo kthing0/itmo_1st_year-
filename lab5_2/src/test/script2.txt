@@ -1,0 +1,1 @@
+execute_script C:\Users\Admin\Desktop\lab5_2\src\test\script.txt
