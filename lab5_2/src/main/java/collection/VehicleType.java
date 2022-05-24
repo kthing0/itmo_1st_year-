@@ -10,8 +10,7 @@ public enum VehicleType {
     SUBMARINE,
     CHOPPER;
 
-    VehicleType() {
-    }
+
 
     public static VehicleType addType() {
         int c = 1;
@@ -20,7 +19,7 @@ public enum VehicleType {
         for (VehicleType type : VehicleType.values()) {
             Printer.print(type + "(" + c++ + ")");
         }
-        String vehicleType = sc.nextLine().toUpperCase(Locale.ROOT);
+        String vehicleType = sc.nextLine();
         try {
             if (vehicleType.equals("1")) {
                 return DRONE;
@@ -30,7 +29,6 @@ public enum VehicleType {
                 return CHOPPER;
             } else {
                 throw new IllegalArgumentException("Введенный вид транспорта не найден, попробуйте снова");
-
             }
         }catch (IllegalArgumentException e){
             Printer.printErr(e.getMessage());
