@@ -1,8 +1,1 @@
-{"helicopter": 
-{"id": 1, "name": "test_test", "coordinates": {"x": 112.0, "y": 100.0}, "creationDate": "2022-05-19T13:53:06.306", "enginePower": 120, "type": "DRONE", "fuelType": "PLASMA"},
-"hahaha": 
-{"id": 2, "name": "Hl1", "coordinates": {"x": 12.0, "y": 23.0}, "creationDate": "2022-05-19T13:53:06.306", "enginePower": 120, "type": "SUBMARINE", "fuelType": "PLASMA"},
-"test": 
-{"id": 3, "name": "Mustang", "coordinates": {"x": 12.0, "y": 42.0}, "creationDate": "2022-05-19T13:53:06.306", "enginePower": 120, "type": "CHOPPER", "fuelType": "DIESEL"},
-"testt": 
-{"id": 4, "name": "aboba", "coordinates": {"x": 124.0, "y": 123.0}, "creationDate": "2022-05-19T13:53:28.549", "enginePower": 124, "type": "CHOPPER", "fuelType": "PLASMA"}}
+
