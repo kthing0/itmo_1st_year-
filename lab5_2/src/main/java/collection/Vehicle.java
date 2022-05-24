@@ -1,6 +1,4 @@
 package collection;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 import utils.Printer;
 
 
@@ -9,14 +7,13 @@ import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 
-public class Vehicle extends LinkedHashMap<String, Vehicle> implements Serializable{
+public class Vehicle extends LinkedHashMap<String, Vehicle> {
     private int id;
     private String name;
 
 
     private Coordinates coordinates;
 
-    @JsonProperty("creationDate")
     private LocalDateTime creationDate;
 
 
@@ -52,7 +49,7 @@ public class Vehicle extends LinkedHashMap<String, Vehicle> implements Serializa
     public Vehicle(String name){
         this.name = name;
     }
-    public Vehicle(@JsonProperty("x") Double x, @JsonProperty("y") Float y){
+    public Vehicle(Double x, Float y){
         this.x = x;
         this.y = y;
 

@@ -56,7 +56,7 @@ public class Main {
 
             } catch (NoSuchElementException e) {
                 Printer.printErr("Недопустимый символ.\nПроверьте корректность ввода и повторите попытку.");
-                return;
+                System.exit(0);
             }
         }
 

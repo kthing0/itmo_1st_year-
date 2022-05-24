@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class CollectionManager {
     LinkedHashMap <String, Vehicle> collection = new LinkedHashMap<>();
    // private LinkedHashMap<String, Vehicle> collection;
@@ -114,6 +113,10 @@ public class CollectionManager {
                 Printer.printSuccess(l + " элемента были успешно удалены из коллекции");
             }if(l > 5){
                 Printer.printSuccess(l + " элементов было успешно удалено из коллекции");
+            }if(l == 0){
+                Printer.print("Не найдено элементов меньше заданного");
+            }else{
+                Printer.print("Введенного элемента нет в коллекции");
             }
         }
     }

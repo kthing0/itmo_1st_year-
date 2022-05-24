@@ -9,15 +9,13 @@ import java.util.Scanner;
 
 public class Coordinates {
 
-    @JsonProperty("x")
     private Double x;
 
 
-    @JsonProperty("y")
     private Float y;
 
 
-    private Coordinates(@JsonProperty("x") Double x,@JsonProperty("y") Float y){
+    private Coordinates(Double x,Float y){
         this.x = x;
         this.y = y;
     }
