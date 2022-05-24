@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import utils.Printer;
 import validation.Validator;
 
+import javax.management.openmbean.KeyAlreadyExistsException;
 import java.io.*;
 
 import java.time.LocalDateTime;
@@ -185,16 +186,13 @@ public class CollectionManager {
     public boolean insert(String key, Vehicle vehicle) {
         try {
             if (collection.containsKey(key)) {
-                throw new Exception("Элемент с таким ключом уже существует.");
+                throw new KeyAlreadyExistsException("Элемент с таким ключом уже существует.");
             }
             collection.put(key, vehicle);
             currentId++;
             Printer.printSuccess("Элемент успешно добавлен в коллекцию");
             return true;
-        } catch (NullPointerException e) {
-            Printer.printErr("Невозможно добавить элемент");
-
-        } catch (Exception e) {
+        } catch (KeyAlreadyExistsException e) {
             Printer.printErr(e.getMessage());
             Printer.print("Хотите изменить ключ и добавить этот элемент в коллекцию? (y/n)");
             Scanner sc = new Scanner(System.in);

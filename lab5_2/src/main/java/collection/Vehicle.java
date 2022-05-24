@@ -4,6 +4,7 @@ import utils.Printer;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.InputMismatchException;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 
@@ -85,18 +86,19 @@ public class Vehicle extends LinkedHashMap<String, Vehicle> {
 
     public static Long addEnginePower(){
         try {
-            Printer.print("Введите мощность двигателя: ");
+            Printer.print("Введите мощность двигателя (целое число):");
             Scanner sc = new Scanner(System.in);
             Long enginePower = sc.nextLong();
             if(enginePower < 0){
-                throw new Exception("Мощность не может быть ниже нуля");
+                throw new IllegalArgumentException();
             }
             return enginePower;
-        }catch (Exception e){
-            Printer.print(e.getMessage());
+        }catch (IllegalArgumentException e){
+            Printer.print("Мощность не может быть отрицателньой");
+        }catch (InputMismatchException e){
+            Printer.print("Мощность должна быть целым числом");
         }
         return addEnginePower();
-
     }
 
 
