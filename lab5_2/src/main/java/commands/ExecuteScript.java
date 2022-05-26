@@ -1,10 +1,13 @@
 package commands;
 
 import collection.CollectionManager;
+import collection.Vehicle;
 import sun.misc.IOUtils;
 import utils.CommandManager;
 import utils.Printer;
+import validation.Validator;
 
+import javax.validation.Validation;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -24,6 +27,7 @@ public class ExecuteScript implements Command{
     @Override
     public void execute(String[] arg) {
         try{
+            Validator.checkPermissions(arg[0]);
             List<String> commands = Files.readAllLines(Paths.get(arg[0]));
             if (script_paths.containsKey(arg[0])){
                 throw new Exception("Внутри скрипта обнаружен его вызов, проверьте корректность данных");
