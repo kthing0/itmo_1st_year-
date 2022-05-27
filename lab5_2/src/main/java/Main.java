@@ -2,6 +2,7 @@ import collection.CollectionManager;
 import collection.Vehicle;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import commands.ExecuteScript;
 import utils.CommandManager;
 import utils.Printer;
@@ -43,6 +44,8 @@ public class Main {
                 Printer.printErr("Путь указан некорректно");
             }catch (JsonParseException e){
                 Printer.printErr("Не удалось прочитать коллекцию. Проверьте корректность данных в файле и попробуйте снова.");
+            }catch (MismatchedInputException e){
+                Printer.printErr("Неверный тип данных для импорта коллекции.");
             }
         }
 

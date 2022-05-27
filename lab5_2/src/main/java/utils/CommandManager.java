@@ -27,7 +27,7 @@ public class CommandManager {
     }
 
     public void execute(String command) {
-        String[] splittedCommand = command.split(" ");
+        String[] splittedCommand = command.trim().split(" ");
         String currentCommand = splittedCommand[0].toLowerCase(Locale.ROOT);
         String[] args = Arrays.copyOfRange(splittedCommand, 1, splittedCommand.length);
         if(commands.containsKey(currentCommand)){
