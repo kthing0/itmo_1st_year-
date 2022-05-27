@@ -1,13 +1,10 @@
 package commands;
 
 import collection.CollectionManager;
-import collection.Vehicle;
-import sun.misc.IOUtils;
 import utils.CommandManager;
 import utils.Printer;
 import validation.Validator;
 
-import javax.validation.Validation;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;

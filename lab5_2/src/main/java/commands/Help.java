@@ -1,6 +1,5 @@
 package commands;
 
-import collection.CollectionManager;
 import utils.Printer;
 
 public class Help implements Command {

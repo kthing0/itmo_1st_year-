@@ -17,6 +17,8 @@ public class Update implements Command{
             collectionManager.update(id, vehicle);
         }catch (ArrayIndexOutOfBoundsException e) {
             Printer.printErr("Использование команды:\n\t\"update [id] {element}\" для обновления элемента по его id");
+        }catch (NumberFormatException e){
+            Printer.printErr("ID должен быть числом");
         }
     }
 }
