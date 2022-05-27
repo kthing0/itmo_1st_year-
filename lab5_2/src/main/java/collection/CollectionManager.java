@@ -219,23 +219,24 @@ public class CollectionManager {
                 collection.remove(key);
                 vehicle.setId(id);
                 collection.put(key, vehicle);
+                Printer.printSuccess("Элемент с id [" + id + "] был успешно обновлен.");
                 return true;
             }
-            if(c==0){
-                Printer.print("ID элемента для обновления не найден. Добавить введенный элемент в коллекцию? (y/n)");
-                Scanner sc = new Scanner(System.in);
-                String line = sc.nextLine();
+        }
+        if(c==0){
+            Printer.print("ID элемента для обновления не найден. Добавить введенный элемент в коллекцию? (y/n)");
+            Scanner sc = new Scanner(System.in);
+            String line = sc.nextLine();
 
-                if(line.equals("y")){
-                    Printer.print("Введите новый ключ для элемента");
-                    String newKey = sc.nextLine();
-                    collection.put(newKey, vehicle);
-                    Printer.printSuccess("Элемент успешно добавлен в коллекцию");
-                    return true;
-                }
-                else if(line.equals("n")){
-                    return false;
-                }
+            if(line.equals("y")){
+                Printer.print("Введите новый ключ для элемента");
+                String newKey = sc.nextLine();
+                collection.put(newKey, vehicle);
+                Printer.printSuccess("Элемент успешно добавлен в коллекцию");
+                return true;
+            }
+            else if(line.equals("n")){
+                return false;
             }
         }
         return false;
