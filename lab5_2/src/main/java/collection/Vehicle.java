@@ -94,9 +94,9 @@ public class Vehicle extends LinkedHashMap<String, Vehicle> {
             }
             return enginePower;
         }catch (IllegalArgumentException e){
-            Printer.print("Мощность не может быть отрицателньой");
+            Printer.printErr("Мощность не может быть отрицателньой");
         }catch (InputMismatchException e){
-            Printer.print("Мощность должна быть целым числом");
+            Printer.printErr("Мощность должна быть целым числом");
         }
         return addEnginePower();
     }

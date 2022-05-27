@@ -91,6 +91,9 @@ public class CollectionManager {
 
     public void remove_key(String removingKey) {
         if (collection.containsKey(removingKey)) {
+            if(collection.get(removingKey).getId() == currentId - 1){
+                currentId--;
+            }
             collection.remove(removingKey);
             Printer.printSuccess("Элемент с ключом \"" + removingKey + "\" успешно удален из коллекции");
         } else {
@@ -189,7 +192,6 @@ public class CollectionManager {
                 throw new KeyAlreadyExistsException("Элемент с таким ключом уже существует.");
             }
             collection.put(key, vehicle);
-            currentId++;
             Printer.printSuccess("Элемент успешно добавлен в коллекцию");
             return true;
         } catch (KeyAlreadyExistsException e) {
@@ -198,17 +200,20 @@ public class CollectionManager {
             Scanner sc = new Scanner(System.in);
             String line = sc.nextLine();
 
-            if (line.equals("y")) {
+            if (line.equals("y") || line.equals("")) {
                 Printer.print("Введите новый ключ для элемента");
                 String newKey = sc.nextLine();
                 collection.put(newKey, vehicle);
                 Printer.printSuccess("Элемент успешно добавлен в коллекцию");
                 return true;
             } else if (line.equals("n")) {
+                currentId--;
                 return false;
             }
         }
+        currentId--;
         return false;
+
     }
 
     public boolean update(int id, Vehicle vehicle) {
@@ -217,8 +222,10 @@ public class CollectionManager {
             if (collection.get(key).getId() == id) {
                 c++;
                 collection.remove(key);
+                currentId--;
                 vehicle.setId(id);
                 collection.put(key, vehicle);
+
                 Printer.printSuccess("Элемент с id [" + id + "] был успешно обновлен.");
                 return true;
             }
@@ -228,17 +235,19 @@ public class CollectionManager {
             Scanner sc = new Scanner(System.in);
             String line = sc.nextLine();
 
-            if(line.equals("y")){
+            if(line.equals("y") || line.equals("")){
                 Printer.print("Введите новый ключ для элемента");
                 String newKey = sc.nextLine();
                 collection.put(newKey, vehicle);
                 Printer.printSuccess("Элемент успешно добавлен в коллекцию");
                 return true;
             }
-            else if(line.equals("n")){
+            else if(line.equals("n")) {
+                currentId--;
                 return false;
             }
         }
+        currentId--;
         return false;
     }
 
@@ -260,7 +269,6 @@ public class CollectionManager {
             Printer.printErr("Элемент с ключом \""+key+"\" не найден");
         }
     }
-
 
 
     public void replace_if_lowe(String key){
