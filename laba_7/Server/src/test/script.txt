@@ -1,0 +1,3 @@
+info
+insert 22
+remove_key 22
